@@ -10,10 +10,10 @@
 
 </head>
 
-<body class="flex flex-col items-center bg-gray-100">
+<body class="flex flex-col items-center bg-blue-100/20">
 
   <!-- Banner container -->
-  <div class="relative w-full h-[60vh]">
+  <div class="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh]">
 
     <!-- Background image -->
     <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/banner.jpg');"></div>
@@ -30,25 +30,99 @@
   </div>
 
   <!-- Main content container -->
-  <div class="w-4/5 h-fullpt-20">
+  <div class="w-11/12 sm:w-4/5 md:w-9/12 h-full my-10 sm:my-15">
 
-<div id="description" class="relative p-10 flex h-[500px]">
-  <!-- First div (on top) -->
-  <div class="w-3/5 -mr-12 relative z-10 mb-8 flex items-center justify-center bg-white/80 rounded-xl overflow-hidden">
-    <img src="images/banner.jpg" alt="Left image" class="w-full h-full object-cover">
+      <div id="description-container" class="relative flex flex-col md:flex-row h-auto md:h-[400px] mb-10 md:mb-15">
+        <!-- First div (on top) -->
+        <div class="w-full md:w-3/5 -mr-0 sm:-mr-6 md:-mr-18 relative z-10 mb-8 flex items-center justify-center bg-white/80 rounded-xl overflow-hidden">
+          <img src="images/concept.jpg" alt="Left image" class="w-full  h-64 sm:h-80 md:h-full object-cover">
+        </div>
+
+        <!-- Second div (lower, behind) -->
+      <div class="w-full md:w-3/5 relative z-0 mt-12 flex flex-col items-start justify-center bg-green-900/20 rounded-xl p-8 text-left backdrop-blur-sm">
+        <h3 class="ml-18 mb-4 text-4xl text-green-900 font-semibold">Atrau City</h3>
+        <p class="ml-18 text-green-800">
+          This project includes two stylish buildings, combining comfortable apartments with conveniently located commercial spaces on the ground floor and an exterior tennis court. An overground parking area ensures easy access and plenty of parking for residents and visitors.
+        </p>
+      </div>
+
+      </div>
+
+      <!--Carousel container -->
+      <div id="carousel-container" class="mb-15">
+        <!-- Main Carousel Image -->
+        <div id="main-id-carousel" class="w-full rounded-xl overflow-hidden">
+          <img src="images/exterior.jpg" alt="Main image" class="w-full h-140 object-cover">
+        </div>
+
+        <!-- Thumbnail Navigation with Arrows -->
+        <div class="mt-8 flex items-center justify-around">
+          <!-- Previous Arrow -->
+          <button id="prev-thumb" class="bg-white p-5 rounded-full shadow hover:bg-green-800/20">
+            &#8592;
+          </button>
+
+          <!-- Thumbnails Scroll Container -->
+          <div id="thumbnail-scroll" class="flex gap-4 overflow-x-auto mx-20">
+            <img src="images/banner.jpg" alt="Thumbnail 1" class="thumbnail w-70 h-30 object-cover rounded-xl cursor-pointer opacity-60 border-2 border-transparent hover:opacity-100">
+            <img src="images/banner.jpg" alt="Thumbnail 2" class="thumbnail w-70 h-30 object-cover rounded-xl cursor-pointer opacity-60 border-2 border-transparent hover:opacity-100">
+            <img src="images/banner.jpg" alt="Thumbnail 3" class="thumbnail w-70 h-30 object-cover rounded-xl cursor-pointer opacity-60 border-2 border-transparent hover:opacity-100">
+            <img src="images/banner.jpg" alt="Thumbnail 4" class="thumbnail w-70 h-30 object-cover rounded-xl cursor-pointer opacity-60 border-2 border-transparent hover:opacity-100">
+          </div>
+
+          <!-- Next Arrow -->
+          <button id="next-thumb" class=" bg-white p-5 rounded-full shadow hover:bg-green-800/20">
+            &#8594;
+          </button>
+
+        </div>
+      </div>
+
+      <!--Location Map container -->
+      <div id="location-info-container" class="flex flex-col md:flex-row gap-5 mt-6 md:mt-10">
+        <!-- Info Section -->
+        <div class="w-full md:w-3/5 flex flex-col justify-center">
+          <ul class="text-green-800 space-y-4 text-sm sm:text-base">
+            <li><span class="font-bold inline-block w-32 sm:w-36">Builder:</span> Aktau Center Stroy</li>
+            <hr class="opacity-30">
+            <li><span class="font-bold inline-block w-32 sm:w-36">Architect:</span> TBA </li>
+            <hr class="opacity-30">
+            <li><span class="font-bold inline-block w-32 sm:w-36">Study team:</span> TBA</li>
+            <hr class="opacity-30">
+            <li><span class="font-bold inline-block w-32 sm:w-36">Delivery year:</span> 2028</li>
+            <hr class="opacity-30">
+            <li><span class="font-bold inline-block w-32 sm:w-36">Surface:</span> TBA m²</li>
+          </ul>
+        </div>
+
+        <!-- Map Section -->
+        <div class="w-full md:w-3/5 mt-4 md:mt-0">
+          <img src="images/map.jpg" alt="image of location" class="w-full h-64 sm:h-80 md:h-140 object-cover rounded-xl">
+        </div>
+      </div>
+
   </div>
 
-  <!-- Second div (lower, behind) -->
-<div class="w-3/5 relative z-0 mt-12 flex flex-col items-start justify-center bg-green-900/20 rounded-xl p-8 text-left backdrop-blur-sm">
-  <h3 class="ml-18 mb-4 text-3xl text-green-900 font-semibold">Atrau City</h3>
-  <p class="ml-18 text-green-800">
-    The project consists of 2 buildings, containing ... apartments and ... ground-floor commercial spaces. Underneath the 2 buildings, you can find an underground parking level with ... parking lots.
-  </p>
-</div>
-
-</div>
-
-  </div>
+  <!-- Footer container -->
+  <footer class="w-full bg-green-900 backdrop-blur-sm py-12">
+    <div class="max-w-7xl mx-auto px-8 text-white">
+      <div class="flex flex-col md:flex-row justify-between gap-8">
+        <div>
+          <h4 class="font-semibold mb-2">About the Project</h4>
+          <p>Two buildings with apartments and commercial spaces, plus underground parking.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-2">Contact</h4>
+          <p>Email: info@atraucity.com</p>
+          <p>Phone: +123 456 7890</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-2">Follow Us</h4>
+          <p>Social links here</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 </body>
 
