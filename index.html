@@ -4,11 +4,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Atrau City Buildings</title>
-</head>
-<body>
 
-  <h1>Hello World</h1>
-  <p>This is a basic HTML template.</p>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+
+<body class="flex flex-col items-center bg-gray-100">
+
+  <!-- Banner container -->
+  <div class="relative w-full h-[60vh]">
+
+    <!-- Background image -->
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/banner.jpg');"></div>
+
+    <!-- Centered content box -->
+    <div class="absolute inset-0 flex justify-center items-center">
+      <div class="w-4/5 h-full flex flex-col justify-end pb-20 p-6">
+        <h2 class="text-white text-6xl font-bold mb-2">Atrau City</h2>
+        <h3 class="text-gray-200 text-2xl">Kazakhstan</h3>
+        <!-- You can add more content here -->
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Main content container -->
+  <div class="w-4/5 h-fullpt-20">
+
+<div id="description" class="relative p-10 flex h-[500px]">
+  <!-- First div (on top) -->
+  <div class="w-3/5 -mr-12 relative z-10 mb-8 flex items-center justify-center bg-white/80 rounded-xl overflow-hidden">
+    <img src="images/banner.jpg" alt="Left image" class="w-full h-full object-cover">
+  </div>
+
+  <!-- Second div (lower, behind) -->
+<div class="w-3/5 relative z-0 mt-12 flex flex-col items-start justify-center bg-green-900/20 rounded-xl p-8 text-left backdrop-blur-sm">
+  <h3 class="ml-18 mb-4 text-3xl text-green-900 font-semibold">Atrau City</h3>
+  <p class="ml-18 text-green-800">
+    The project consists of 2 buildings, containing ... apartments and ... ground-floor commercial spaces. Underneath the 2 buildings, you can find an underground parking level with ... parking lots.
+  </p>
+</div>
+
+</div>
+
+  </div>
 
 </body>
+
 </html>
