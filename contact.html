@@ -12,11 +12,104 @@
 
 <body class="flex flex-col bg-blue-100/20">
 
-  <h1>contact HTML</h1>
-
   <!-- Render shared navbar -->
   <div id="navbar-container" class="fixed top-10 left-1/2 transform -translate-x-1/2 h-17 w-[90%] z-20"> </div>
   <script src="navbar.js"></script>
+
+  <div class="mx-auto w-[80%] h-full my-20 pt-20">
+    <div class="flex items-center mb-6">
+      <!-- Vertical stripe -->
+      <div class="w-1 h-12 bg-green-700 mr-4 rounded"></div>
+
+      <!-- Heading -->
+      <h2 class="text-5xl font-bold text-green-900">Contact</h2>
+    </div>
+
+    <!-- Main Content -->
+    <div class="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-8">
+
+      <!-- Form -->
+      <form action="#" method="POST" class="space-y-6">
+
+        <!-- Name -->
+        <div>
+          <label for="name" class="block font-medium mb-1 text-green-900">Name</label>
+          <input type="text" id="name" name="name" placeholder="Name" class="bg-white rounded-xl w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-600 focus:outline-none">
+        </div>
+
+        <!-- Surname -->
+        <div>
+          <label for="surname" class="block font-medium mb-1 text-green-900">Surname</label>
+          <input type="text" id="surname" name="surname" placeholder="Surname" class="bg-white rounded-xl w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-600 focus:outline-none">
+        </div>
+
+        <!-- phone number -->
+        <div>
+          <label for="phone" class="block font-medium mb-1 text-green-900">Phone number</label>
+          <input type="tel" id="phone" name="phone" placeholder="Phone number" class="bg-white rounded-xl w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-600 focus:outline-none">
+        </div>
+
+        <!-- E-mailadres* -->
+        <div>
+          <label for="email" class="block font-medium mb-1 text-green-900">E-mail <span class="text-red-500">*</span></label>
+          <input type="email" id="email" name="email" placeholder="E-mail" required class="bg-white rounded-xl w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-600 focus:outline-none">
+        </div>
+
+        <!-- question (textarea) -->
+        <div>
+          <label for="question" class="block font-medium mb-1 text-green-900">Your question</label>
+          <textarea id="question" name="question" rows="5" placeholder="Type your question..." class="bg-white rounded-xl w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-600 focus:outline-none"></textarea>
+        </div>
+
+        <!-- Submit button -->
+        <div class="text-start">
+          <button type="submit" class="bg-green-900 hover:bg-green-900/80 text-white px-6 py-2 rounded-xl font-semibold transition">
+            Send
+          </button>
+        </div>
+
+      </form>
+
+      <!-- Information -->
+      <div>
+        <p class="text-green-900"><strong>Address</strong><br>
+        To be <br>
+        completed</p>
+
+        <p class="text-green-900 mt-4"><strong>Phone</strong><br>
+        +123 456 7890</p>
+
+        <p class="text-green-900 mt-4"><strong>VAT number</strong><br>
+        BE 1234.567.890</p>
+
+        <p class="text-green-900 mt-4"><strong>General mail</strong><br>
+        info@atraucity.com</p>
+      </div>
+
+    </div>
+
+  </div>
+
+    <!-- Footer container -->
+  <footer class="w-full bg-green-900 backdrop-blur-sm py-12">
+    <div class="max-w-7xl mx-auto px-8 text-white">
+      <div class="flex flex-col md:flex-row justify-between gap-8">
+        <div>
+          <h4 class="font-semibold mb-2">About the Project</h4>
+          <p>Two buildings with apartments and commercial spaces, plus underground parking.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-2">Contact</h4>
+          <p>Email: info@atraucity.com</p>
+          <p>Phone: +123 456 7890</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-2">Follow Us</h4>
+          <p>Social links here</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 </body>
 
