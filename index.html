@@ -49,29 +49,29 @@
       </div>
 
       <!--Carousel container -->
-      <div id="carousel-container" class="mb-15">
+      <div data-controller="carousel" class="mb-15">
         <!-- Main Carousel Image -->
-        <div id="main-id-carousel" class="w-full rounded-xl overflow-hidden">
-          <img src="images/exterior.jpg" alt="Main image" class="w-full h-140 object-cover">
+        <div class="w-full rounded-xl overflow-hidden">
+          <img data-carousel-target="main" src="images/exterior.jpg" alt="Main image" class="w-full h-140 object-cover">
         </div>
 
         <!-- Thumbnail Navigation with Arrows -->
         <div class="mt-8 flex items-center justify-around">
           <!-- Previous Arrow -->
-          <button id="prev-thumb" class="bg-white p-5 rounded-full shadow hover:bg-green-800/20">
+          <button data-action="click->carousel#prev" class="bg-white p-5 rounded-full shadow hover:bg-green-800/20">
             &#8592;
           </button>
 
           <!-- Thumbnails Scroll Container -->
           <div id="thumbnail-scroll" class="flex gap-4 overflow-x-auto mx-20">
-            <img src="images/banner.jpg" alt="Thumbnail 1" class="thumbnail w-70 h-30 object-cover rounded-xl cursor-pointer opacity-60 border-2 border-transparent hover:opacity-100">
-            <img src="images/banner.jpg" alt="Thumbnail 2" class="thumbnail w-70 h-30 object-cover rounded-xl cursor-pointer opacity-60 border-2 border-transparent hover:opacity-100">
-            <img src="images/banner.jpg" alt="Thumbnail 3" class="thumbnail w-70 h-30 object-cover rounded-xl cursor-pointer opacity-60 border-2 border-transparent hover:opacity-100">
-            <img src="images/banner.jpg" alt="Thumbnail 4" class="thumbnail w-70 h-30 object-cover rounded-xl cursor-pointer opacity-60 border-2 border-transparent hover:opacity-100">
+            <img data-carousel-target="thumbnail" data-action="click->carousel#thumbnailSelect" src="images/banner.jpg" alt="Thumbnail 1" class="thumbnail w-70 h-30 object-cover rounded-xl cursor-pointer opacity-60 border-2 border-transparent hover:opacity-100">
+            <img data-carousel-target="thumbnail" data-action="click->carousel#thumbnailSelect" src="images/banner.jpg" alt="Thumbnail 2" class="thumbnail w-70 h-30 object-cover rounded-xl cursor-pointer opacity-60 border-2 border-transparent hover:opacity-100">
+            <img data-carousel-target="thumbnail" data-action="click->carousel#thumbnailSelect" src="images/banner.jpg" alt="Thumbnail 3" class="thumbnail w-70 h-30 object-cover rounded-xl cursor-pointer opacity-60 border-2 border-transparent hover:opacity-100">
+            <img data-carousel-target="thumbnail" data-action="click->carousel#thumbnailSelect" src="images/banner.jpg" alt="Thumbnail 4" class="thumbnail w-70 h-30 object-cover rounded-xl cursor-pointer opacity-60 border-2 border-transparent hover:opacity-100">
           </div>
 
           <!-- Next Arrow -->
-          <button id="next-thumb" class=" bg-white p-5 rounded-full shadow hover:bg-green-800/20">
+          <button data-action="click->carousel#next" class=" bg-white p-5 rounded-full shadow hover:bg-green-800/20">
             &#8594;
           </button>
 
@@ -123,6 +123,8 @@
       </div>
     </div>
   </footer>
+
+  <script type="module" src="/stimulus.js"></script>
 
 </body>
 
