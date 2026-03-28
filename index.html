@@ -10,21 +10,11 @@
 
 </head>
 
-<body class="flex flex-col items-center bg-blue-100/20">
+<body class="flex flex-col bg-blue-100/20">
 
-  <!-- <div id="Navbar" class="h-10 max-w-[90%] fixed top-0 left-1/2 transform -translate-x-1/2 bg-white shadow z-50"> -->
-  <div id="Navbar" class="h-17 w-[90%] fixed bg-white z-20 mt-5 rounded-xl [box-shadow:0_4px_6px_-1px_rgba(0,0,0,0.1),0_-4px_6px_-1px_rgba(0,0,0,0.1)] flex justify-between items-center px-6">
-    <div class="text-green-900 font-medium ">Elevating Living, Defining Skylines.</div>
-    <div class="flex gap-8">
-      <h3 class="text-green-900 text-xl font-extrabold relative cursor-pointer after:absolute after:left-0 after:bottom-0 after:h-[1px] after:w-0 after:bg-green-900 after:transition-all after:duration-[250ms] hover:after:w-full">Home</h3>
-      <h3 class="text-green-900 text-xl font-medium relative cursor-pointer after:absolute after:left-0 after:bottom-0 after:h-[1px] after:w-0 after:bg-green-900 after:transition-all after:duration-[250ms] hover:after:w-full">Gallery</h3>
-      <h3 class="text-green-900 text-xl font-medium relative cursor-pointer after:absolute after:left-0 after:bottom-0 after:h-[1px] after:w-0 after:bg-green-900 after:transition-all after:duration-[250ms] hover:after:w-full">About ACS</h3>
-      <h3 class="text-green-900 text-xl font-medium relative cursor-pointer after:absolute after:left-0 after:bottom-0 after:h-[1px] after:w-0 after:bg-green-900 after:transition-all after:duration-[250ms] hover:after:w-full">
-        Contact
-      </h3>
-      <h3 class="text-green-900 font-bold text-xl ml-8">EN</h3>
-    </div>
-  </div>
+  <!-- Render shared navbar -->
+  <div id="navbar-container" class="fixed top-10 left-1/2 transform -translate-x-1/2 h-17 w-[90%] z-20"> </div>
+  <script src="navbar.js"></script>
 
   <!-- Banner container -->
   <div class="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh]">
@@ -44,76 +34,77 @@
   </div>
 
   <!-- Main content container -->
-  <div class="w-11/12 sm:w-4/5 md:w-9/12 h-full my-10 sm:my-15">
+  <div class="mx-auto w-[80%] h-full my-10 sm:my-15">
 
-      <div id="description-container" class="relative flex flex-col md:flex-row h-auto md:h-[400px] mb-10 md:mb-15">
-        <!-- First div (on top) -->
-        <div class="w-full md:w-3/5 -mr-0 sm:-mr-6 md:-mr-18 relative z-10 mb-8 flex items-center justify-center bg-white/80 rounded-xl overflow-hidden">
-          <img src="images/concept.jpg" alt="Left image" class="w-full  h-64 sm:h-80 md:h-full object-cover">
-        </div>
+    <div id="description-container" class="relative flex flex-col md:flex-row h-auto md:h-[400px] mb-10 md:mb-15">
 
-        <!-- Second div (lower, behind) -->
-      <div class="w-full md:w-3/5 relative z-0 mt-12 flex flex-col items-start justify-center bg-green-900/20 rounded-xl p-8 text-left backdrop-blur-sm">
+      <!-- First div (on top) -->
+      <div class="w-full md:w-3/5 -mr-0 sm:-mr-6 md:-mr-18 relative z-10 mb-8 flex items-center justify-center bg-white/80 rounded-xl overflow-hidden">
+        <img src="images/concept.jpg" alt="Left image" class="w-full  h-64 sm:h-80 md:h-full object-cover">
+      </div>
+
+      <!-- Second div (lower, behind) -->
+      <div class="w-full md:w-4/5 relative z-0 mt-12 flex flex-col items-start justify-center bg-green-900/20 rounded-xl p-8 text-left backdrop-blur-sm">
         <h3 class="ml-18 mb-4 text-4xl text-green-900 font-semibold">Atrau City</h3>
         <p class="ml-18 text-green-800">
-          This project includes two stylish buildings, combining comfortable apartments with conveniently located commercial spaces on the ground floor and an exterior tennis court. An overground parking area ensures easy access and plenty of parking for residents and visitors.
+          This project includes two stylish buildings, combining comfortable apartments with conveniently located commercial spaces on the ground floor. An overground parking area ensures easy access and plenty of parking for residents and visitors.
         </p>
       </div>
 
+    </div>
+
+    <!--Carousel container -->
+    <div data-controller="carousel" class="mb-15">
+      <!-- Main Carousel Image -->
+      <div class="w-full rounded-xl overflow-hidden">
+        <img data-carousel-target="main" src="images/exterior.jpg" alt="Main image" class="w-full h-140 object-cover">
       </div>
 
-      <!--Carousel container -->
-      <div data-controller="carousel" class="mb-15">
-        <!-- Main Carousel Image -->
-        <div class="w-full rounded-xl overflow-hidden">
-          <img data-carousel-target="main" src="images/exterior.jpg" alt="Main image" class="w-full h-140 object-cover">
+      <!-- Thumbnail Navigation with Arrows -->
+      <div class="mt-8 flex items-center justify-around">
+        <!-- Previous Arrow -->
+        <button data-action="click->carousel#prev" class="bg-white p-5 rounded-full shadow-lg hover:bg-green-800/20">
+          &#8592;
+        </button>
+
+        <!-- Thumbnails Scroll Container -->
+        <div id="thumbnail-scroll" class="flex gap-4 overflow-x-auto mx-20">
+          <img data-carousel-target="thumbnail" data-action="click->carousel#thumbnailSelect" src="images/banner.jpg" alt="Thumbnail 1" class="thumbnail w-70 h-30 object-cover rounded-xl cursor-pointer opacity-60 border-2 border-transparent hover:opacity-100">
+          <img data-carousel-target="thumbnail" data-action="click->carousel#thumbnailSelect" src="images/banner.jpg" alt="Thumbnail 2" class="thumbnail w-70 h-30 object-cover rounded-xl cursor-pointer opacity-60 border-2 border-transparent hover:opacity-100">
+          <img data-carousel-target="thumbnail" data-action="click->carousel#thumbnailSelect" src="images/banner.jpg" alt="Thumbnail 3" class="thumbnail w-70 h-30 object-cover rounded-xl cursor-pointer opacity-60 border-2 border-transparent hover:opacity-100">
+          <img data-carousel-target="thumbnail" data-action="click->carousel#thumbnailSelect" src="images/banner.jpg" alt="Thumbnail 4" class="thumbnail w-70 h-30 object-cover rounded-xl cursor-pointer opacity-60 border-2 border-transparent hover:opacity-100">
         </div>
 
-        <!-- Thumbnail Navigation with Arrows -->
-        <div class="mt-8 flex items-center justify-around">
-          <!-- Previous Arrow -->
-          <button data-action="click->carousel#prev" class="bg-white p-5 rounded-full shadow-lg hover:bg-green-800/20">
-            &#8592;
-          </button>
+        <!-- Next Arrow -->
+        <button data-action="click->carousel#next" class=" bg-white p-5 rounded-full shadow hover:bg-green-800/20">
+          &#8594;
+        </button>
 
-          <!-- Thumbnails Scroll Container -->
-          <div id="thumbnail-scroll" class="flex gap-4 overflow-x-auto mx-20">
-            <img data-carousel-target="thumbnail" data-action="click->carousel#thumbnailSelect" src="images/banner.jpg" alt="Thumbnail 1" class="thumbnail w-70 h-30 object-cover rounded-xl cursor-pointer opacity-60 border-2 border-transparent hover:opacity-100">
-            <img data-carousel-target="thumbnail" data-action="click->carousel#thumbnailSelect" src="images/banner.jpg" alt="Thumbnail 2" class="thumbnail w-70 h-30 object-cover rounded-xl cursor-pointer opacity-60 border-2 border-transparent hover:opacity-100">
-            <img data-carousel-target="thumbnail" data-action="click->carousel#thumbnailSelect" src="images/banner.jpg" alt="Thumbnail 3" class="thumbnail w-70 h-30 object-cover rounded-xl cursor-pointer opacity-60 border-2 border-transparent hover:opacity-100">
-            <img data-carousel-target="thumbnail" data-action="click->carousel#thumbnailSelect" src="images/banner.jpg" alt="Thumbnail 4" class="thumbnail w-70 h-30 object-cover rounded-xl cursor-pointer opacity-60 border-2 border-transparent hover:opacity-100">
-          </div>
+      </div>
+    </div>
 
-          <!-- Next Arrow -->
-          <button data-action="click->carousel#next" class=" bg-white p-5 rounded-full shadow hover:bg-green-800/20">
-            &#8594;
-          </button>
-
-        </div>
+    <!--Location Map container -->
+    <div id="location-info-container" class="flex flex-col md:flex-row gap-5 mt-6 md:mt-10">
+      <!-- Info Section -->
+      <div class="w-full md:w-3/5 flex flex-col justify-center">
+        <ul class="text-green-800 space-y-4 text-sm sm:text-base">
+          <li><span class="font-bold inline-block w-32 sm:w-36">Builder:</span> Aktau Center Stroy</li>
+          <hr class="opacity-30">
+          <li><span class="font-bold inline-block w-32 sm:w-36">Architect:</span> TBA </li>
+          <hr class="opacity-30">
+          <li><span class="font-bold inline-block w-32 sm:w-36">Study team:</span> TBA</li>
+          <hr class="opacity-30">
+          <li><span class="font-bold inline-block w-32 sm:w-36">Delivery year:</span> 2028</li>
+          <hr class="opacity-30">
+          <li><span class="font-bold inline-block w-32 sm:w-36">Surface:</span> TBA m²</li>
+        </ul>
       </div>
 
-      <!--Location Map container -->
-      <div id="location-info-container" class="flex flex-col md:flex-row gap-5 mt-6 md:mt-10">
-        <!-- Info Section -->
-        <div class="w-full md:w-3/5 flex flex-col justify-center">
-          <ul class="text-green-800 space-y-4 text-sm sm:text-base">
-            <li><span class="font-bold inline-block w-32 sm:w-36">Builder:</span> Aktau Center Stroy</li>
-            <hr class="opacity-30">
-            <li><span class="font-bold inline-block w-32 sm:w-36">Architect:</span> TBA </li>
-            <hr class="opacity-30">
-            <li><span class="font-bold inline-block w-32 sm:w-36">Study team:</span> TBA</li>
-            <hr class="opacity-30">
-            <li><span class="font-bold inline-block w-32 sm:w-36">Delivery year:</span> 2028</li>
-            <hr class="opacity-30">
-            <li><span class="font-bold inline-block w-32 sm:w-36">Surface:</span> TBA m²</li>
-          </ul>
-        </div>
-
-        <!-- Map Section -->
-        <div class="w-full md:w-3/5 mt-4 md:mt-0">
-          <img src="images/map.jpg" alt="image of location" class="w-full h-64 sm:h-80 md:h-140 object-cover rounded-xl">
-        </div>
+      <!-- Map Section -->
+      <div class="w-full md:w-3/5 mt-4 md:mt-0">
+        <img src="images/map.jpg" alt="image of location" class="w-full h-64 sm:h-80 md:h-140 object-cover rounded-xl">
       </div>
+    </div>
 
   </div>
 
