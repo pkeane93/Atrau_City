@@ -25,21 +25,21 @@
       <ul class="flex gap-3 bg-gray-100 p-2 rounded-2xl shadow-sm">
 
         <!-- Active -->
-        <li data-gallery-target="btn" data-action="click->gallery#selection" class="px-5 py-2 rounded-xl bg-green-900 text-white font-medium text-sm cursor-pointer shadow transition">
+        <li data-gallery-target="btn" data-action="click->gallery#selection" data-type="studio" class="px-5 py-2 rounded-xl bg-green-900 text-white font-medium text-sm cursor-pointer shadow transition">
           Studios
         </li>
 
-        <li data-gallery-target="btn" data-action="click->gallery#selection" class="px-5 py-2 rounded-xl text-green-900 font-medium text-sm cursor-pointer
+        <li data-gallery-target="btn" data-action="click->gallery#selection" data-type="apt_two" class="px-5 py-2 rounded-xl text-green-900 font-medium text-sm cursor-pointer
                   hover:bg-white hover:shadow transition">
           2-Bedroom Apartments
         </li>
 
-        <li data-gallery-target="btn" data-action="click->gallery#selection" class="px-5 py-2 rounded-xl text-green-900 font-medium text-sm cursor-pointer
+        <li data-gallery-target="btn" data-action="click->gallery#selection" data-type="apt_three" class="px-5 py-2 rounded-xl text-green-900 font-medium text-sm cursor-pointer
                   hover:bg-white hover:shadow transition">
           3-Bedroom Apartments
         </li>
 
-        <li data-gallery-target="btn" data-action="click->gallery#selection" class="px-5 py-2 rounded-xl text-green-900 font-medium text-sm cursor-pointer
+        <li data-gallery-target="btn" data-action="click->gallery#selection" data-type="exterior" class="px-5 py-2 rounded-xl text-green-900 font-medium text-sm cursor-pointer
                   hover:bg-white hover:shadow transition">
           Exterior & Amenities
         </li>
@@ -48,7 +48,7 @@
     </div>
 
     <!-- Gallery Display -->
-    <div data-gallery-target="container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-10">
+    <div data-gallery-target="display" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-10">
 
       <!-- Image 1 -->
       <div class="overflow-hidden rounded-xl cursor-pointer group">
