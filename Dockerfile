@@ -16,7 +16,7 @@ FROM nginx:alpine
 RUN rm -rf /usr/share/nginx/html/*
 
 # Copy your folders
-COPY views /usr/share/nginx/html/views
+COPY views/*.html /usr/share/nginx/html/
 COPY views/shared /usr/share/nginx/html/shared
 COPY javascript /usr/share/nginx/html/javascript
 
