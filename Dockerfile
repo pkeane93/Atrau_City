@@ -12,23 +12,23 @@
 
 FROM nginx:alpine
 
-# Remove default nginx files
+# Remove default Nginx files
 RUN rm -rf /usr/share/nginx/html/*
 
-# Copy views and javascript folders
+# Copy your folders
 COPY views /usr/share/nginx/html/views
 COPY javascript /usr/share/nginx/html/javascript
 
-# Fix permissions so nginx can read everything
+# Fix permissions
 RUN chmod -R 755 /usr/share/nginx/html
 
-# Override nginx config to serve views/index.html at root
+# Nginx config
 RUN echo 'server { \
     listen 80; \
-    root /usr/share/nginx/html/views; \
-    index index.html; \
-    location / { try_files $uri $uri/ =404; } \
+    root /usr/share/nginx/html; \
+    index views/index.html; \
     location /javascript/ { alias /usr/share/nginx/html/javascript/; } \
+    location /views/ { alias /usr/share/nginx/html/views/; } \
 }' > /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
