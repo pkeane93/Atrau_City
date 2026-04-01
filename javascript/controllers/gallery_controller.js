@@ -76,7 +76,6 @@ application.register("gallery", class extends Controller {
 
   selection(event) {
     const type = event.currentTarget.dataset.type
-    console.log(event.currentTarget.dataset.type)
 
     this.btnTargets.forEach(btn => {
       btn.classList.remove("bg-green-900", "text-white", "shadow")
@@ -85,17 +84,12 @@ application.register("gallery", class extends Controller {
     event.currentTarget.classList.add("bg-green-900", "text-white", "shadow")
     event.currentTarget.classList.remove("hover:bg-white", "hover:shadow")
 
-    console.log(type)
     this.render(type)
   }
 
   render(type) {
     const images = this.images[type] || []
-    console.log(images)
-
     this.displayTarget.innerHTML = ""
-
-    console.log(this.displayTarget)
 
     images.forEach(url => {
       const div = document.createElement("div")
