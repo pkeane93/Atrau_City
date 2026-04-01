@@ -98,10 +98,24 @@ application.register("gallery", class extends Controller {
       const img = document.createElement("img")
       img.src = url
       img.className = "w-full h-64 object-cover transition duration-300 group-hover:scale-105"
+      img.setAttribute("data-action", "click->gallery#zoom") // delete this?
 
       div.appendChild(img)
       this.displayTarget.appendChild(div)
     })
+  }
+
+  // delete this?
+  zoom(event) {
+    const img = event.currentTarget
+    const isZoomed = img.classList.toggle("fixed") // main toggle
+
+    if (isZoomed) {
+      img.classList.add("top-20", "left-30", "z-10", "w-150", "h-120", "m-auto")
+    } else {
+      // restore original layout
+      img.classList.remove("top-0", "left-0", "z-50", "w-auto", "h-auto", "max-w-full", "max-h-full", "m-auto")
+    }
   }
 
 });
