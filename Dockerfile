@@ -16,7 +16,7 @@ FROM nginx:alpine
 RUN rm -rf /usr/share/nginx/html/*
 
 # Copy your folders
-COPY views/*.html /usr/share/nginx/html/
+COPY views /usr/share/nginx/html/views
 COPY views/shared /usr/share/nginx/html/shared
 COPY javascript /usr/share/nginx/html/javascript
 
@@ -27,8 +27,19 @@ RUN chmod -R 755 /usr/share/nginx/html
 RUN echo 'server { \
     listen 80; \
     root /usr/share/nginx/html; \
-    index views/index.html; \
-    location /javascript/ { alias /usr/share/nginx/html/javascript/; } \
+    index index.html; \
+
+    location / { \
+        try_files /views/index.html =404; \
+    } \
+
+    location /views/ { \
+        alias /usr/share/nginx/html/views/; \
+    } \
+
+    location /javascript/ { \
+        alias /usr/share/nginx/html/javascript/; \
+    } \
 }' > /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
