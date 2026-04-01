@@ -17,6 +17,7 @@ RUN rm -rf /usr/share/nginx/html/*
 
 # Copy your folders
 COPY views /usr/share/nginx/html/views
+COPY views/shared /usr/share/nginx/html/shared
 COPY javascript /usr/share/nginx/html/javascript
 
 # Fix permissions
@@ -28,7 +29,6 @@ RUN echo 'server { \
     root /usr/share/nginx/html; \
     index views/index.html; \
     location /javascript/ { alias /usr/share/nginx/html/javascript/; } \
-    location /views/ { alias /usr/share/nginx/html/views/; } \
 }' > /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
