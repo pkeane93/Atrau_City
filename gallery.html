@@ -12,11 +12,89 @@
 
 <body class="flex flex-col bg-blue-100/20">
 
-  <h1>Gallery HTML</h1>
-
   <!-- Render shared navbar -->
   <div id="navbar-container" class="fixed top-10 left-1/2 transform -translate-x-1/2 h-17 w-[90%] z-20"> </div>
   <script src="navbar.js"></script>
+
+
+  <!-- Gallery Container -->
+  <div data-controller="gallery" class="mx-auto mt-35 p-2">
+
+    <!-- Appartement Selection -->
+    <div class="flex justify-center">
+      <ul class="flex gap-3 bg-gray-100 p-2 rounded-2xl shadow-sm">
+
+        <!-- Active -->
+        <li class="px-5 py-2 rounded-xl bg-green-900 text-white font-medium text-sm cursor-pointer shadow transition">
+          Studios
+        </li>
+
+        <li class="px-5 py-2 rounded-xl text-green-900 font-medium text-sm cursor-pointer
+                  hover:bg-white hover:shadow transition">
+          2-Bedroom Apartments
+        </li>
+
+        <li class="px-5 py-2 rounded-xl text-green-900 font-medium text-sm cursor-pointer
+                  hover:bg-white hover:shadow transition">
+          3-Bedroom Apartments
+        </li>
+
+        <li class="px-5 py-2 rounded-xl text-green-900 font-medium text-sm cursor-pointer
+                  hover:bg-white hover:shadow transition">
+          Exterior & Amenities
+        </li>
+
+      </ul>
+    </div>
+
+    <!-- Gallery Display -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-10">
+
+      <!-- Image 1 -->
+      <div class="overflow-hidden rounded-xl cursor-pointer group">
+        <img src="https://res.cloudinary.com/drt1grff2/image/upload/v1774713773/apt01living001_f0naxz.jpg"
+            class="w-full h-64 object-cover transition duration-300 group-hover:scale-105" />
+      </div>
+
+      <!-- Image 2 -->
+      <div class="overflow-hidden rounded-xl cursor-pointer group">
+        <img src="https://res.cloudinary.com/drt1grff2/image/upload/v1774713773/apt01living002_qi8ehb.jpg"
+            class="w-full h-64 object-cover transition duration-300 group-hover:scale-105" />
+      </div>
+
+      <!-- Image 3 -->
+      <div class="overflow-hidden rounded-xl cursor-pointer group">
+        <img src="https://res.cloudinary.com/drt1grff2/image/upload/v1774713700/apt01bedroom003_lvpi56.jpg"
+            class="w-full h-64 object-cover transition duration-300 group-hover:scale-105" />
+      </div>
+
+      <!-- Image 4 -->
+      <div class="overflow-hidden rounded-xl cursor-pointer group">
+        <img src="https://res.cloudinary.com/drt1grff2/image/upload/v1774713658/apt01living004_pao0fm.jpg"
+            class="w-full h-64 object-cover transition duration-300 group-hover:scale-105" />
+      </div>
+
+      <!-- Image 5 -->
+      <div class="overflow-hidden rounded-xl cursor-pointer group">
+        <img src="https://res.cloudinary.com/drt1grff2/image/upload/v1774713657/apt01living003_i3ypc4.jpg"
+            class="w-full h-64 object-cover transition duration-300 group-hover:scale-105" />
+      </div>
+
+      <!-- Image 6 -->
+      <div class="overflow-hidden rounded-xl cursor-pointer group">
+        <img src="https://res.cloudinary.com/drt1grff2/image/upload/v1774713657/apt01bedroom002_iuwdkz.jpg"
+            class="w-full h-64 object-cover transition duration-300 group-hover:scale-105" />
+      </div>
+
+      <!-- Image 7 -->
+      <div class="overflow-hidden rounded-xl cursor-pointer group">
+        <img src="https://res.cloudinary.com/drt1grff2/image/upload/v1774713657/apt01bedroom001_ycnjws.jpg"
+            class="w-full h-64 object-cover transition duration-300 group-hover:scale-105" />
+      </div>
+
+    </div>
+
+  </div>
 
 </body>
 
