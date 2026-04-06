@@ -50,6 +50,14 @@
     <div data-gallery-target="display" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-10">
     </div>
 
+    <!-- Lightbox Display -->
+    <div data-gallery-target="lightbox" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-50">
+      <button data-action="click->gallery#prev" class="absolute left-5 text-white text-4xl">‹</button>
+      <img data-gallery-target="image" src="/img1.jpg" class="max-w-[90%] max-h-[80%]">
+      <button data-action="click->gallery#next" class="absolute right-5 text-white text-4xl">›</button>
+      <button data-action="click->gallery#close" class="absolute top-5 right-5 text-white text-2xl">✕</button>
+    </div>
+
   </div>
 
   <!-- Footer container -->

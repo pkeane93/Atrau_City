@@ -2,7 +2,7 @@ import { Application, Controller } from "https://unpkg.com/@hotwired/stimulus/di
 
 const application = Application.start();
 
-// Example controller
+// Carousel controller
 application.register("carousel", class extends Controller {
   static targets = ["main", "thumbnail"];
 
