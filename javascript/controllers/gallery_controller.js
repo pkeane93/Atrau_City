@@ -2,11 +2,13 @@ import { Application, Controller } from "https://unpkg.com/@hotwired/stimulus/di
 
 const application = Application.start();
 
-// Example controller
+// gallery Controller
 application.register("gallery", class extends Controller {
-  static targets= ["btn", "display"]
+  static targets= ["btn", "display", "lightbox", "image"]
 
   connect() {
+    this.currentImages = []
+    this.currentIndex = 0
     this.images = {
       studio: [
         "https://res.cloudinary.com/drt1grff2/image/upload/v1774713773/apt01living001_f0naxz.jpg",
@@ -90,32 +92,48 @@ application.register("gallery", class extends Controller {
   render(type) {
     const images = this.images[type] || []
     this.displayTarget.innerHTML = ""
+    this.currentImages = images
 
-    images.forEach(url => {
+    images.forEach((url, index) => {
       const div = document.createElement("div")
       div.className = "overflow-hidden rounded-xl cursor-pointer group"
 
       const img = document.createElement("img")
       img.src = url
+      img.dataset.index = index
       img.className = "w-full h-64 object-cover transition duration-300 group-hover:scale-105"
-      img.setAttribute("data-action", "click->gallery#zoom") // delete this?
+      img.setAttribute("data-action", "click->gallery#open")
 
       div.appendChild(img)
       this.displayTarget.appendChild(div)
     })
   }
 
-  // delete this?
-  zoom(event) {
-    const img = event.currentTarget
-    const isZoomed = img.classList.toggle("fixed") // main toggle
+  // lightBox Method!
+  open(event) {
+    this.currentIndex = parseInt(event.currentTarget.dataset.index)
+    this.show()
+    this.lightboxTarget.classList.remove("hidden")
+  }
 
-    if (isZoomed) {
-      img.classList.add("top-20", "left-30", "z-10", "w-150", "h-120", "m-auto")
-    } else {
-      // restore original layout
-      img.classList.remove("top-0", "left-0", "z-50", "w-auto", "h-auto", "max-w-full", "max-h-full", "m-auto")
-    }
+  show() {
+    this.imageTarget.src = this.currentImages[this.currentIndex]
+  }
+
+  next() {
+    this.currentIndex = (this.currentIndex + 1) % this.currentImages.length
+    this.show()
+  }
+
+  prev() {
+    this.currentIndex =
+      (this.currentIndex - 1 + this.currentImages.length) %
+      this.currentImages.length
+    this.show()
+  }
+
+  close() {
+   this.lightboxTarget.classList.add("hidden")
   }
 
 });
