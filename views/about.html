@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atrau City - About</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+</head>
+
+<body class="flex flex-col bg-blue-100/20 text-gray-800">
+
+  <!-- Render shared navbar -->
+  <div id="navbar-container" class="fixed top-10 left-1/2 transform -translate-x-1/2 h-17 w-[90%] z-20"> </div>
+
+  <!-- Hero Section -->
+  <section class="w-full h-[70vh] relative">
+    <!-- Background image -->
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://res.cloudinary.com/drt1grff2/image/upload/v1774713628/exterior001_j8n17z.jpg');"></div>
+
+    <!-- Overlay for readability -->
+    <div class="absolute inset-0 bg-black/10"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 flex items-end justify-center h-full">
+      <div class="w-[90%] max-w-6xl pb-16">
+        <h1 class="text-white text-4xl md:text-6xl font-bold mb-2">Atrau City</h1>
+        <p class="text-gray-200 text-lg md:text-2xl">Kazakhstan</p>
+      </div>
+    </div>
+  </section>
+
+   <!-- Features Section -->
+  <section class="max-w-6xl mx-auto px-6 py-14">
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-2xl shadow">
+        <h3 class="text-xl font-semibold mb-2">Prime Location</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow">
+        <h3 class="text-xl font-semibold mb-2">Modern Design</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow">
+        <h3 class="text-xl font-semibold mb-2">Sustainable Living</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- First About Content -->
+  <section class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10 items-center">
+    <img src="https://res.cloudinary.com/drt1grff2/image/upload/v1774713635/model001_ludp0l.jpg" alt="Project Image" class="rounded-2xl shadow-lg">
+    <div>
+      <h2 class="text-3xl font-semibold mb-4">The Project</h2>
+      <p class="mb-4">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+      <p>
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </div>
+</section>
+
+  <!-- Second About Content -->
+  <section class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10 items-center">
+    <div>
+      <h2 class="text-3xl font-semibold mb-4">The Project</h2>
+      <p class="mb-4">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+      <p>
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </div>
+    <img src="https://res.cloudinary.com/drt1grff2/image/upload/v1774713635/model001_ludp0l.jpg" alt="Project Image" class="rounded-2xl shadow-lg">
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-container" class="w-full bg-green-900 backdrop-blur-sm py-12"></div>
+
+  <script src="/javascript/navbar.js"></script>
+  <script src="/javascript/footer.js"></script>
+
+</body>
+</html>
