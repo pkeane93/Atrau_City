@@ -18,25 +18,25 @@
   <!-- Render shared navbar -->
   <div id="navbar-container" class="fixed top-10 left-1/2 transform -translate-x-1/2 h-17 w-[90%] z-20"> </div>
 
-  <!-- Banner container -->
-  <div class="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh]">
-
+  <!-- Hero Section -->
+  <section class="w-full h-[70vh] relative">
     <!-- Background image -->
     <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://res.cloudinary.com/drt1grff2/image/upload/v1774713628/exterior001_j8n17z.jpg');"></div>
 
-    <!-- Centered content box -->
-    <div class="absolute inset-0 flex justify-center items-center">
-      <div class="w-4/5 h-full flex flex-col justify-end pb-20 p-6">
-        <h2 class="text-white text-6xl font-bold mb-2">Atrau City</h2>
-        <h3 class="text-gray-200 text-2xl">Kazakhstan</h3>
-        <!-- You can add more content here -->
+    <!-- Overlay for readability -->
+    <div class="absolute inset-0 bg-black/10"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 flex items-end justify-center h-full">
+      <div class="w-[90%] max-w-6xl pb-16">
+        <h1 class="text-white text-4xl md:text-6xl font-bold mb-2">Atrau City</h1>
+        <p class="text-gray-200 text-lg md:text-2xl">Kazakhstan</p>
       </div>
     </div>
-
-  </div>
+  </section>
 
   <!-- Main content container -->
-  <div class="mx-auto w-[80%] h-full my-10 sm:my-15">
+  <section class="mx-auto w-[80%] h-full my-10 sm:my-15">
 
     <div id="description-container" class="relative flex flex-col md:flex-row h-auto md:h-[400px] mb-10 md:mb-15">
 
@@ -108,7 +108,7 @@
       </div>
     </div>
 
-  </div>
+  </section>
 
   <!-- Footer container -->
   <div id="footer-container" class="w-full bg-green-900 backdrop-blur-sm py-12"> </div>
