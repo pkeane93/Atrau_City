@@ -11,6 +11,9 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/images/favicon.png">
 
+  <!-- Tabler Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+
 </head>
 
 <body class="flex flex-col bg-blue-100/20">
@@ -73,8 +76,8 @@
       <!-- Thumbnail Navigation with Arrows -->
       <div class="mt-8 flex items-center justify-around">
         <!-- Previous Arrow -->
-        <button data-action="click->carousel#prev" class="bg-white p-5 rounded-full shadow-lg hover:bg-green-800/20">
-          &#8592;
+        <button data-action="click->carousel#prev" class="bg-white py-2 px-3 rounded-xl shadow hover:bg-green-800/20">
+          <i class="ti ti-chevron-left"></i>
         </button>
 
         <!-- Thumbnails Scroll Container -->
@@ -86,8 +89,8 @@
         </div>
 
         <!-- Next Arrow -->
-        <button data-action="click->carousel#next" class=" bg-white p-5 rounded-full shadow hover:bg-green-800/20">
-          &#8594;
+        <button data-action="click->carousel#next" class="bg-white py-2 px-3 rounded-xl shadow hover:bg-green-800/20">
+          <i class="ti ti-chevron-right"></i>
         </button>
 
       </div>
@@ -124,6 +127,7 @@
   <script src="/javascript/footer.js"></script>
   <script type="module" src="/javascript/controllers/carousel_controller.js"></script>
   <script src="/javascript/navbar.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tabler/core@1.4.0/dist/js/tabler.min.js"></script>
 
 </body>
 
