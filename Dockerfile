@@ -7,6 +7,7 @@ RUN rm -rf /usr/share/nginx/html/*
 COPY views /usr/share/nginx/html/views
 COPY views/shared /usr/share/nginx/html/shared
 COPY javascript /usr/share/nginx/html/javascript
+COPY assets /usr/share/nginx/html/assets
 
 # Fix permissions
 RUN chmod -R 755 /usr/share/nginx/html
