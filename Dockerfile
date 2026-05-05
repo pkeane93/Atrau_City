@@ -8,6 +8,7 @@ COPY views /usr/share/nginx/html/views
 COPY views/shared /usr/share/nginx/html/shared
 COPY javascript /usr/share/nginx/html/javascript
 COPY assets /usr/share/nginx/html/assets
+COPY images /usr/share/nginx/html/images
 
 # Fix permissions
 RUN chmod -R 755 /usr/share/nginx/html
