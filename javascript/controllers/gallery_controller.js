@@ -4,7 +4,14 @@ const application = Application.start();
 
 // gallery Controller
 application.register("gallery", class extends Controller {
-  static targets= ["btn", "display", "lightbox", "image"]
+  static targets = ["btn", "display", "lightbox", "image", "dropdown", "dropdownBtn", "dropdownLabel", "dropdownChevron"]
+
+  labels = {
+    studio: "Studios",
+    apt_two: "2-Bedroom Apartments",
+    apt_three: "3-Bedroom Apartments",
+    exterior: "Exterior & Amenities"
+  }
 
   connect() {
     this.currentImages = []
@@ -92,14 +99,42 @@ application.register("gallery", class extends Controller {
   selection(event) {
     const type = event.currentTarget.dataset.type
 
+    // Update desktop pill active state by matching type, not event.currentTarget
     this.btnTargets.forEach(btn => {
       btn.classList.remove("bg-green-900", "text-white", "shadow")
       btn.classList.add("text-green-900", "hover:bg-white", "hover:shadow")
+      if (btn.dataset.type === type) {
+        btn.classList.add("bg-green-900", "text-white", "shadow")
+        btn.classList.remove("hover:bg-white", "hover:shadow")
+      }
     })
-    event.currentTarget.classList.add("bg-green-900", "text-white", "shadow")
-    event.currentTarget.classList.remove("hover:bg-white", "hover:shadow")
+
+    // Update mobile dropdown label and close it
+    this.dropdownLabelTarget.textContent = this.labels[type]
+    this.closeDropdownMenu()
 
     this.render(type)
+  }
+
+  toggleDropdown(event) {
+    event.stopPropagation()
+    this.dropdownTarget.classList.contains("hidden") ? this.openDropdownMenu() : this.closeDropdownMenu()
+  }
+
+  openDropdownMenu() {
+    this.dropdownTarget.classList.remove("hidden")
+    this.dropdownChevronTarget.style.transform = "rotate(180deg)"
+  }
+
+  closeDropdownMenu() {
+    this.dropdownTarget.classList.add("hidden")
+    this.dropdownChevronTarget.style.transform = ""
+  }
+
+  closeDropdown(event) {
+    if (!this.element.contains(event.target)) {
+      this.closeDropdownMenu()
+    }
   }
 
   render(type) {
