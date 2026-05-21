@@ -28,7 +28,6 @@ application.register("carousel", class extends Controller {
 
   thumbnailSelect(event) {
     this.index = this.thumbnailTargets.indexOf(event.currentTarget);
-    console.log(this.index)
     this.updateMain();
   }
 
