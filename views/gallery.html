@@ -12,6 +12,9 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/images/favicon.png">
 
+  <!-- Tabler Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+
 </head>
 
 <body class="flex flex-col bg-blue-100/20">
@@ -22,7 +25,7 @@
   <script src="/javascript/navbar.js"></script>
 
   <!-- Gallery Container -->
-  <div data-controller="gallery" class="w-full max-w-6xl mx-auto mt-35 mb-10 p-2">
+  <div data-controller="gallery" data-action="click@window->gallery#closeDropdown" class="w-full max-w-6xl mx-auto mt-35 mb-10 p-2">
 
       <div class="flex items-center mb-6">
         <!-- Vertical stripe -->
@@ -33,29 +36,43 @@
       </div>
 
     <!-- Appartement Selection -->
-    <div class="flex justify-center">
-      <ul class="flex gap-3 bg-gray-100 p-2 rounded-2xl shadow-sm">
 
-        <!-- Active -->
+    <!-- Mobile dropdown (hidden on md+) -->
+    <div class="md:hidden mb-4 relative">
+      <button data-gallery-target="dropdownBtn"
+              data-action="click->gallery#toggleDropdown"
+              class="w-full flex justify-between items-center px-5 py-3 bg-gray-100 rounded-2xl shadow-sm font-medium text-sm text-green-900 cursor-pointer">
+        <span data-gallery-target="dropdownLabel">Studios</span>
+        <i data-gallery-target="dropdownChevron" class="ti ti-chevron-down transition-transform duration-300"></i>
+      </button>
+      <div data-gallery-target="dropdown"
+           class="hidden absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-lg flex flex-col z-10 overflow-hidden">
+        <button data-action="click->gallery#selection" data-type="studio"
+                class="px-5 py-3 text-green-900 font-medium text-sm text-left hover:bg-green-50 transition">Studios</button>
+        <button data-action="click->gallery#selection" data-type="apt_two"
+                class="px-5 py-3 text-green-900 font-medium text-sm text-left hover:bg-green-50 transition">2-Bedroom Apartments</button>
+        <button data-action="click->gallery#selection" data-type="apt_three"
+                class="px-5 py-3 text-green-900 font-medium text-sm text-left hover:bg-green-50 transition">3-Bedroom Apartments</button>
+        <button data-action="click->gallery#selection" data-type="exterior"
+                class="px-5 py-3 text-green-900 font-medium text-sm text-left hover:bg-green-50 transition">Exterior & Amenities</button>
+      </div>
+    </div>
+
+    <!-- Desktop pill bar (hidden on mobile) -->
+    <div class="hidden md:flex justify-center">
+      <ul class="flex gap-3 bg-gray-100 p-2 rounded-2xl shadow-sm">
         <li data-gallery-target="btn" data-action="click->gallery#selection" data-type="studio" class="px-5 py-2 rounded-xl bg-green-900 text-white font-medium text-sm cursor-pointer shadow transition">
           Studios
         </li>
-
-        <li data-gallery-target="btn" data-action="click->gallery#selection" data-type="apt_two" class="px-5 py-2 rounded-xl text-green-900 font-medium text-sm cursor-pointer
-                  hover:bg-white hover:shadow transition">
+        <li data-gallery-target="btn" data-action="click->gallery#selection" data-type="apt_two" class="px-5 py-2 rounded-xl text-green-900 font-medium text-sm cursor-pointer hover:bg-white hover:shadow transition">
           2-Bedroom Apartments
         </li>
-
-        <li data-gallery-target="btn" data-action="click->gallery#selection" data-type="apt_three" class="px-5 py-2 rounded-xl text-green-900 font-medium text-sm cursor-pointer
-                  hover:bg-white hover:shadow transition">
+        <li data-gallery-target="btn" data-action="click->gallery#selection" data-type="apt_three" class="px-5 py-2 rounded-xl text-green-900 font-medium text-sm cursor-pointer hover:bg-white hover:shadow transition">
           3-Bedroom Apartments
         </li>
-
-        <li data-gallery-target="btn" data-action="click->gallery#selection" data-type="exterior" class="px-5 py-2 rounded-xl text-green-900 font-medium text-sm cursor-pointer
-                  hover:bg-white hover:shadow transition">
+        <li data-gallery-target="btn" data-action="click->gallery#selection" data-type="exterior" class="px-5 py-2 rounded-xl text-green-900 font-medium text-sm cursor-pointer hover:bg-white hover:shadow transition">
           Exterior & Amenities
         </li>
-
       </ul>
     </div>
 
