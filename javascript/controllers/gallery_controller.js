@@ -77,7 +77,6 @@ application.register("gallery", class extends Controller {
       exterior: [
         "https://res.cloudinary.com/drt1grff2/image/upload/v1774713635/model001_ludp0l.jpg",
         "https://res.cloudinary.com/drt1grff2/image/upload/v1774713633/model002_fepi5u.jpg",
-        "https://res.cloudinary.com/drt1grff2/image/upload/v1774713632/map001_dpguoi.jpg",
         "https://res.cloudinary.com/drt1grff2/image/upload/v1774713631/hallway008_rpqg4p.jpg",
         "https://res.cloudinary.com/drt1grff2/image/upload/v1774713631/hallway004_pewthd.jpg",
         "https://res.cloudinary.com/drt1grff2/image/upload/v1774713630/hallway002_ch3r5w.jpg",
@@ -148,6 +147,7 @@ application.register("gallery", class extends Controller {
 
       const img = document.createElement("img")
       img.src = url
+      img.loading = "lazy"
       img.dataset.index = index
       img.className = "w-full h-64 object-cover transition duration-300 group-hover:scale-105"
       img.setAttribute("data-action", "click->gallery#open")
@@ -162,6 +162,12 @@ application.register("gallery", class extends Controller {
     this.currentIndex = parseInt(event.currentTarget.dataset.index)
     this.show()
     this.lightboxTarget.classList.remove("hidden")
+    this._keyHandler = (e) => {
+      if (e.key === "ArrowRight") this.next()
+      if (e.key === "ArrowLeft") this.prev()
+      if (e.key === "Escape") this.close()
+    }
+    window.addEventListener("keydown", this._keyHandler)
   }
 
   show() {
@@ -181,7 +187,12 @@ application.register("gallery", class extends Controller {
   }
 
   close() {
-   this.lightboxTarget.classList.add("hidden")
+    this.lightboxTarget.classList.add("hidden")
+    if (this._keyHandler) window.removeEventListener("keydown", this._keyHandler)
+  }
+
+  closeOnBackground(event) {
+    if (event.target === this.lightboxTarget) this.close()
   }
 
 });
