@@ -96,15 +96,15 @@
     <div data-gallery-target="lightbox" data-action="click->gallery#closeOnBackground" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-50">
       <img data-gallery-target="image" src="/img1.jpg" class="max-w-[90%] max-h-[80vh]">
       <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-4">
-        <button data-action="click->gallery#prev" class="bg-white/50 hover:bg-white/70 text-white py-3 px-4 rounded-xl shadow transition">
-          <i class="ti ti-chevron-left text-3xl"></i>
+        <button data-action="click->gallery#prev" aria-label="Previous image" class="bg-white/50 hover:bg-white/70 text-white py-3 px-4 rounded-xl shadow transition">
+          <i class="ti ti-chevron-left text-3xl" aria-hidden="true"></i>
         </button>
-        <button data-action="click->gallery#next" class="bg-white/50 hover:bg-white/70 text-white py-3 px-4 rounded-xl shadow transition">
-          <i class="ti ti-chevron-right text-3xl"></i>
+        <button data-action="click->gallery#next" aria-label="Next image" class="bg-white/50 hover:bg-white/70 text-white py-3 px-4 rounded-xl shadow transition">
+          <i class="ti ti-chevron-right text-3xl" aria-hidden="true"></i>
         </button>
       </div>
-      <button data-action="click->gallery#close" class="absolute top-5 right-5 bg-white/50 hover:bg-white/70 text-white py-3 px-4 rounded-xl shadow transition">
-        <i class="ti ti-x text-3xl"></i>
+      <button data-action="click->gallery#close" aria-label="Close lightbox" class="absolute top-5 right-5 bg-white/50 hover:bg-white/70 text-white py-3 px-4 rounded-xl shadow transition">
+        <i class="ti ti-x text-3xl" aria-hidden="true"></i>
       </button>
     </div>
 
