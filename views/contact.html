@@ -40,32 +40,35 @@
         <!-- Name -->
         <div>
           <label for="name" class="block font-medium mb-1 text-green-900">Name</label>
-          <input type="text" id="name" name="name" placeholder="Name" class="bg-white rounded-xl w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-600 focus:outline-none">
+          <input type="text" id="name" name="name" placeholder="Name" class="text-base bg-white rounded-xl w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-600 focus:outline-none">
         </div>
 
         <!-- Surname -->
         <div>
           <label for="surname" class="block font-medium mb-1 text-green-900">Surname</label>
-          <input type="text" id="surname" name="surname" placeholder="Surname" class="bg-white rounded-xl w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-600 focus:outline-none">
+          <input type="text" id="surname" name="surname" placeholder="Surname" class="text-base bg-white rounded-xl w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-600 focus:outline-none">
         </div>
 
         <!-- phone number -->
         <div>
           <label for="phone" class="block font-medium mb-1 text-green-900">Phone number</label>
-          <input type="tel" id="phone" name="phone" placeholder="Phone number" class="bg-white rounded-xl w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-600 focus:outline-none">
+          <input type="tel" id="phone" name="phone" placeholder="Phone number" class="text-base bg-white rounded-xl w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-600 focus:outline-none">
         </div>
 
         <!-- E-mailadres* -->
         <div>
           <label for="email" class="block font-medium mb-1 text-green-900">E-mail <span class="text-red-500">*</span></label>
-          <input type="email" id="email" name="email" placeholder="E-mail" required class="bg-white rounded-xl w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-600 focus:outline-none">
+          <input type="email" id="email" name="email" placeholder="E-mail" required class="text-base bg-white rounded-xl w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-600 focus:outline-none">
         </div>
 
         <!-- question (textarea) -->
         <div>
           <label for="question" class="block font-medium mb-1 text-green-900">Your question</label>
-          <textarea id="question" name="question" rows="5" placeholder="Type your question..." class="bg-white rounded-xl w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-600 focus:outline-none"></textarea>
+          <textarea id="question" name="question" rows="5" placeholder="Type your question..." class="text-base bg-white rounded-xl w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-600 focus:outline-none"></textarea>
         </div>
+
+        <!-- Honeypot — hidden from humans, catches bots -->
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
         <!-- Submit button -->
         <div class="text-start">
