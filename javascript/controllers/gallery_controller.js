@@ -141,20 +141,60 @@ application.register("gallery", class extends Controller {
     this.displayTarget.innerHTML = ""
     this.currentImages = images
 
-    images.forEach((url, index) => {
-      const div = document.createElement("div")
-      div.className = "overflow-hidden rounded-xl cursor-pointer group"
+    const isPlan = (url) => /plan/i.test(url.split("/").pop())
 
-      const img = document.createElement("img")
-      img.src = url
-      img.loading = "lazy"
-      img.dataset.index = index
-      img.className = "w-full h-64 object-cover transition duration-300 group-hover:scale-105"
-      img.setAttribute("data-action", "click->gallery#open")
+    const lifestyle = images.map((url, index) => ({ url, index })).filter(o => !isPlan(o.url))
+    const plans = images.map((url, index) => ({ url, index })).filter(o => isPlan(o.url))
 
-      div.appendChild(img)
-      this.displayTarget.appendChild(div)
-    })
+    lifestyle.forEach(({ url, index }) => this.displayTarget.appendChild(this.buildTile(url, index, false)))
+
+    if (plans.length) {
+      const heading = document.createElement("div")
+      heading.className = "col-span-full mt-6 mb-1 pt-6 border-t border-green-900/15 flex items-center gap-2"
+      heading.innerHTML = `<i class="ti ti-ruler-2 text-[#a9824f]" aria-hidden="true"></i><h3 class="text-green-900 font-semibold">Floor Plans</h3>`
+      this.displayTarget.appendChild(heading)
+      plans.forEach(({ url, index }) => this.displayTarget.appendChild(this.buildTile(url, index, true)))
+    }
+  }
+
+  buildTile(url, index, plan) {
+    const wrap = document.createElement("div")
+    wrap.className = "flex flex-col"
+
+    const imgWrap = document.createElement("div")
+    imgWrap.className = plan
+      ? "overflow-hidden rounded-xl cursor-pointer border border-green-900/15 bg-white group"
+      : "overflow-hidden rounded-xl cursor-pointer group"
+
+    const img = document.createElement("img")
+    img.src = url
+    img.loading = "lazy"
+    img.dataset.index = index
+    img.className = plan
+      ? "w-full h-64 object-contain p-3"
+      : "w-full h-64 object-cover transition duration-300 group-hover:scale-105"
+    img.setAttribute("data-action", "click->gallery#open")
+
+    imgWrap.appendChild(img)
+    wrap.appendChild(imgWrap)
+
+    const caption = document.createElement("p")
+    caption.className = "mt-2 text-sm text-green-900 font-medium"
+    caption.textContent = this.labelFor(url, plan)
+    wrap.appendChild(caption)
+
+    return wrap
+  }
+
+  labelFor(url, plan) {
+    if (plan) return "Floor Plan"
+    const file = url.split("/").pop()
+    if (/living/i.test(file)) return "Living Area"
+    if (/bedroom/i.test(file)) return "Bedroom"
+    if (/bathroom/i.test(file)) return "Bathroom"
+    if (/hallway/i.test(file)) return "Entrance Hall"
+    if (/model|exterior/i.test(file)) return "Exterior View"
+    return "Interior View"
   }
 
   // lightBox Method!
