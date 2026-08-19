@@ -48,7 +48,7 @@
   <!-- Main content container -->
   <section class="mx-auto w-[80%] h-full my-10 sm:my-15 p-2">
 
-    <div id="description-container" class="relative flex flex-col md:flex-row h-auto md:h-[400px] mb-10 md:mb-15">
+    <div id="description-container" data-reveal class="relative flex flex-col md:flex-row h-auto md:h-[400px] mb-10 md:mb-15">
 
       <!-- First div (on top) -->
       <div class="w-full md:w-3/5 -mr-0 sm:-mr-6 md:-mr-18 relative z-10 mb-8 flex items-center justify-center bg-white/80 rounded-xl overflow-hidden">
@@ -56,9 +56,9 @@
       </div>
 
       <!-- Second div (lower, behind) -->
-      <div class="w-full md:w-4/5 relative z-0 mt-12 flex flex-col items-start justify-center bg-green-900/20 rounded-xl p-8 text-left backdrop-blur-sm">
-        <h3 class="heading-display ml-18 mb-4 text-green-900 font-semibold">Atrau City</h3>
-        <p class="ml-18 text-green-800">
+      <div class="w-full md:w-4/5 relative z-0 mt-12 flex flex-col items-start justify-center bg-green-900/20 rounded-xl p-8 md:pl-24 text-left backdrop-blur-sm">
+        <h3 class="heading-display mb-4 text-green-900 font-semibold">Atrau City</h3>
+        <p class="text-green-800">
           This project includes two stylish buildings, combining comfortable apartments with conveniently located commercial spaces on the ground floor. An overground parking area ensures easy access and plenty of parking for residents and visitors.
         </p>
       </div>
@@ -96,20 +96,22 @@
     </div>
 
     <!--Location Map container -->
-    <div id="location-info-container" class="flex flex-col md:flex-row gap-5 mt-6 md:mt-10">
+    <div id="location-info-container" data-reveal class="flex flex-col md:flex-row gap-5 mt-6 md:mt-10">
       <!-- Info Section -->
-      <div class="w-full md:w-3/5 flex flex-col justify-center">
-        <ul class="text-green-800 space-y-4 text-sm sm:text-base">
-          <li><span class="font-bold inline-block w-32 sm:w-36">Builder:</span> Aktau Center Stroy</li>
-          <hr class="opacity-30">
-          <li class="hidden"><span class="font-bold inline-block w-32 sm:w-36">Architect:</span> TBA </li>
-          <hr class="opacity-30 hidden">
-          <li class="hidden"><span class="font-bold inline-block w-32 sm:w-36">Study team:</span> TBA</li>
-          <hr class="opacity-30 hidden">
-          <li><span class="font-bold inline-block w-32 sm:w-36">Delivery year:</span> 2028</li>
-          <hr class="opacity-30">
-          <li class="hidden"><span class="font-bold inline-block w-32 sm:w-36">Surface:</span> TBA m²</li>
-        </ul>
+      <div class="w-full md:w-2/5 flex flex-col">
+        <div class="bg-green-900/10 rounded-2xl p-6 sm:p-8">
+          <ul class="text-green-800 space-y-4 text-sm sm:text-base">
+            <li><span class="font-bold inline-block w-32 sm:w-36">Builder:</span> Aktau Center Stroy</li>
+            <hr class="opacity-30">
+            <li class="hidden"><span class="font-bold inline-block w-32 sm:w-36">Architect:</span> TBA </li>
+            <hr class="opacity-30 hidden">
+            <li class="hidden"><span class="font-bold inline-block w-32 sm:w-36">Study team:</span> TBA</li>
+            <hr class="opacity-30 hidden">
+            <li><span class="font-bold inline-block w-32 sm:w-36">Delivery year:</span> 2028</li>
+            <hr class="opacity-30">
+            <li class="hidden"><span class="font-bold inline-block w-32 sm:w-36">Surface:</span> TBA m²</li>
+          </ul>
+        </div>
       </div>
 
       <!-- Map Section -->
@@ -119,7 +121,7 @@
     </div>
 
     <!-- CTA Section -->
-    <div class="text-center py-12 mt-10 bg-green-900/10 rounded-2xl">
+    <div data-reveal class="text-center py-12 mt-10 bg-green-900/10 rounded-2xl">
       <h2 class="heading-section font-semibold text-green-900 mb-3">Discover Your Future Home</h2>
       <p class="text-green-800 mb-6">Browse our studios, 2-bedroom and 3-bedroom apartments.</p>
       <a href="/views/gallery.html" class="bg-green-900 hover:bg-green-900/80 text-white px-8 py-3 rounded-xl font-semibold transition">
@@ -138,6 +140,7 @@
   <script type="module" src="/javascript/controllers/navbar_controller.js"></script>
   <script src="/javascript/navbar.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tabler/core@1.4.0/dist/js/tabler.min.js"></script>
+  <script src="/javascript/scrollReveal.js"></script>
 
 </body>
 

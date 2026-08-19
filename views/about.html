@@ -48,9 +48,9 @@
   <section class="mx-auto w-[80%] h-full my-10 sm:my-15 p-2">
 
     <!-- Features Section -->
-    <div class="mx-auto mb-15">
+    <div class="mx-auto mb-15" data-reveal>
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-green-900/20 p-6 rounded-2xl shadow">
+        <div class="bg-green-900/20 p-6 rounded-2xl shadow transition duration-300 hover:shadow-md hover:-translate-y-1">
           <i class="ti ti-map-pin text-3xl text-green-900 mb-3 block"></i>
           <h3 class="text-xl font-semibold mb-2 text-green-900">Prime Location</h3>
           <p class="text-green-900">
@@ -60,7 +60,7 @@
             convenience with exclusivity.
           </p>
         </div>
-        <div class="bg-green-900/20 p-6 rounded-2xl shadow">
+        <div class="bg-green-900/20 p-6 rounded-2xl shadow transition duration-300 hover:shadow-md hover:-translate-y-1">
           <i class="ti ti-building-skyscraper text-3xl text-green-900 mb-3 block"></i>
           <h3 class="text-xl font-semibold mb-2 text-green-900">Modern Design</h3>
           <p class="text-green-900">
@@ -70,7 +70,7 @@
             natural light.
           </p>
         </div>
-        <div class="bg-green-900/20 p-6 rounded-2xl shadow">
+        <div class="bg-green-900/20 p-6 rounded-2xl shadow transition duration-300 hover:shadow-md hover:-translate-y-1">
           <i class="ti ti-leaf text-3xl text-green-900 mb-3 block"></i>
           <h3 class="text-xl font-semibold mb-2 text-green-900">Sustainable Living</h3>
           <p class="text-green-900">
@@ -83,8 +83,10 @@
     </div>
 
     <!-- Section 1: The Vision — image left, text right -->
-    <div class="mx-auto grid md:grid-cols-2 gap-10 items-center mb-15">
-      <img loading="lazy" src="https://res.cloudinary.com/drt1grff2/image/upload/f_auto,q_auto/v1774713635/model001_ludp0l.jpg" alt="Project Image" class="rounded-2xl shadow-lg">
+    <div class="mx-auto grid md:grid-cols-2 gap-10 items-center mb-15" data-reveal>
+      <div class="rounded-2xl shadow-lg overflow-hidden">
+        <img loading="lazy" src="https://res.cloudinary.com/drt1grff2/image/upload/f_auto,q_auto/v1774713635/model001_ludp0l.jpg" alt="Project Image" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+      </div>
       <div>
         <h2 class="heading-section font-semibold mb-4">The Vision</h2>
         <p class="mb-4">
@@ -100,7 +102,7 @@
     </div>
 
     <!-- Section 2: The Builder — text left, image right -->
-    <div class="mx-auto grid md:grid-cols-2 gap-10 items-center mb-15">
+    <div class="mx-auto grid md:grid-cols-2 gap-10 items-center mb-15" data-reveal>
       <div>
         <h2 class="heading-section font-semibold mb-4">The Builder</h2>
         <p class="mb-4">
@@ -110,35 +112,45 @@
           Operating as a full turnkey contractor — from design through to handover — Aktau Center Stroy has delivered a wide range of projects including multi-storey residential complexes, hotel developments, administrative buildings, and business centres. Notable completed projects include Golden Towers, a 19-floor elite residential complex in Aktau, and Caspian City, a multi-building complex located 800 metres from the Caspian Sea shore.
         </p>
 
-        <p class="text-slate-700 font-medium mb-2">Project documentation:</p>
+        <p class="text-green-900 font-semibold mb-3 text-sm uppercase tracking-wide">Project documentation</p>
         <ul class="space-y-2">
           <li>
-            <a href="/assets/CT Tower_concept design_Atrau Final 2023.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-700 hover:text-blue-900 underline underline-offset-2">
-              Official brochure
+            <a href="/assets/CT Tower_concept design_Atrau Final 2023.pdf" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 rounded-xl border border-green-900/15 bg-green-900/5 px-4 py-3 text-green-900 font-medium hover:bg-green-900/15 hover:border-green-900/30 transition">
+              <i class="ti ti-file-text text-lg text-green-800" aria-hidden="true"></i>
+              <span>Official brochure</span>
+              <i class="ti ti-external-link ml-auto text-[#a9824f] group-hover:text-green-800 transition" aria-hidden="true"></i>
             </a>
           </li>
           <li>
-            <a href="/assets/CT tower_ENG Каталог новый ТОО Актау Центр Строй март 2016.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-700 hover:text-blue-900 underline underline-offset-2">
-              Aktau Center Stroy information
+            <a href="/assets/CT tower_ENG Каталог новый ТОО Актау Центр Строй март 2016.pdf" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 rounded-xl border border-green-900/15 bg-green-900/5 px-4 py-3 text-green-900 font-medium hover:bg-green-900/15 hover:border-green-900/30 transition">
+              <i class="ti ti-file-text text-lg text-green-800" aria-hidden="true"></i>
+              <span>Aktau Center Stroy information</span>
+              <i class="ti ti-external-link ml-auto text-[#a9824f] group-hover:text-green-800 transition" aria-hidden="true"></i>
             </a>
           </li>
           <li>
-            <a href="/assets/CT Tower_Эскизный проект 9 этажного жилого дома new (согласованный)-1 (1).pdf" target="_blank" rel="noopener noreferrer" class="text-blue-700 hover:text-blue-900 underline underline-offset-2">
-              Preliminary Design Project (Approved) - Russian
+            <a href="/assets/CT Tower_Эскизный проект 9 этажного жилого дома new (согласованный)-1 (1).pdf" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 rounded-xl border border-green-900/15 bg-green-900/5 px-4 py-3 text-green-900 font-medium hover:bg-green-900/15 hover:border-green-900/30 transition">
+              <i class="ti ti-file-text text-lg text-green-800" aria-hidden="true"></i>
+              <span>Preliminary Design Project (Approved) &ndash; Russian</span>
+              <i class="ti ti-external-link ml-auto text-[#a9824f] group-hover:text-green-800 transition" aria-hidden="true"></i>
             </a>
           </li>
           <li>
-            <a href="/assets/Preliminary Design Project for a 9-Storey Residential Building (Approved) - english.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-700 hover:text-blue-900 underline underline-offset-2">
-              Preliminary Design Project (Approved) - English
+            <a href="/assets/Preliminary Design Project for a 9-Storey Residential Building (Approved) - english.pdf" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 rounded-xl border border-green-900/15 bg-green-900/5 px-4 py-3 text-green-900 font-medium hover:bg-green-900/15 hover:border-green-900/30 transition">
+              <i class="ti ti-file-text text-lg text-green-800" aria-hidden="true"></i>
+              <span>Preliminary Design Project (Approved) &ndash; English</span>
+              <i class="ti ti-external-link ml-auto text-[#a9824f] group-hover:text-green-800 transition" aria-hidden="true"></i>
             </a>
           </li>
         </ul>
       </div>
-      <img loading="lazy" src="https://res.cloudinary.com/drt1grff2/image/upload/f_auto,q_auto/v1774713633/model002_fepi5u.jpg" alt="Builder Image" class="rounded-2xl shadow-lg">
+      <div class="rounded-2xl shadow-lg overflow-hidden">
+        <img loading="lazy" src="https://res.cloudinary.com/drt1grff2/image/upload/f_auto,q_auto/v1774713633/model002_fepi5u.jpg" alt="Builder Image" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+      </div>
     </div>
 
     <!-- CTA Section -->
-    <div class="text-center py-12 bg-green-900/10 rounded-2xl">
+    <div class="text-center py-12 bg-green-900/10 rounded-2xl" data-reveal>
       <h2 class="heading-section font-semibold text-green-900 mb-3">Interested in Atrau City?</h2>
       <p class="text-green-800 mb-6">Get in touch with our team for more information about available units.</p>
       <a href="/views/contact.html" class="bg-green-900 hover:bg-green-900/80 text-white px-8 py-3 rounded-xl font-semibold transition">
@@ -155,6 +167,7 @@
   <script type="module" src="/javascript/controllers/navbar_controller.js"></script>
   <script src="/javascript/navbar.js"></script>
   <script src="/javascript/footer.js"></script>
+  <script src="/javascript/scrollReveal.js"></script>
 
 </body>
 
